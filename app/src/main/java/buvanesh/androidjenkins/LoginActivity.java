@@ -23,6 +23,18 @@ public class LoginActivity extends AppCompatActivity {
         mPasswordView = (EditText) findViewById(R.id.password);
 
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
+        
+         mEmailSignInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(!TextUtils.isEmpty(mEmailView.getText().toString())&&!TextUtils.isEmpty(mPasswordView.getText().toString())){
+                    startActivity(new Intent(LoginActivity.this,DashboardActivity.class));
+                }else{
+                    Toast.makeText(LoginActivity.this,"UserName or Password cannot be empty",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
 }
