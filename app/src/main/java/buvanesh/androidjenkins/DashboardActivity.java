@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package buvanesh.androidjenkins;;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
