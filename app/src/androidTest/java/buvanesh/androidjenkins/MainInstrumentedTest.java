@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package buvanesh.androidjenkins;
 
 import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
@@ -6,13 +6,13 @@ import android.widget.Button;
 
 public class MainInstrumentedTest extends ActivityInstrumentationTestCase2<MainActivity> {
     public MainInstrumentedTest() {
-        super("com.example.myapplication",MainActivity.class);
+        super("buvanesh.androidjenkins",LoginActivity.class);
     }
 
     public void testUI(){
         Activity activity = getActivity();
 
-        final Button button = (Button)activity.findViewById(R.id.btn_signin);
+        final Button button = (Button)activity.findViewById(R.id.email_sign_in_button);
         activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
