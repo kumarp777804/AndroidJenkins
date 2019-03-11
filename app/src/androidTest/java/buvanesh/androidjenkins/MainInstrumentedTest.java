@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
 import android.widget.Button;
 
-public class MainInstrumentedTest extends ActivityInstrumentationTestCase2<MainActivity> {
+public class MainInstrumentedTest extends ActivityInstrumentationTestCase2<LoginActivity> {
     public MainInstrumentedTest() {
         super("buvanesh.androidjenkins",LoginActivity.class);
     }
