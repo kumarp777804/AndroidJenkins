@@ -1,6 +1,8 @@
 package buvanesh.androidjenkins;
 
 import android.app.Activity;
+import android.widget.Button;
+import android.widget.EditText;
 
 import org.junit.Assert;
 import org.junit.Before;
