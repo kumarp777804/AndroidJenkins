@@ -14,14 +14,25 @@ import org.robolectric.annotation.Config;
 @Config(manifest = Config.NONE)
 public class LoginActivityTest {
     LoginActivity loginActivity;
+    EditText edtUser;
+    EditText edtPassword;
+    Button btnLogin;
 
     @Before
     public void setUp(){
         loginActivity = Robolectric.buildActivity(LoginActivity.class).create().get();
+        edtUser = (EditText)loginActivity.findViewById(R.id.email);
+        edtPassword = (EditText)loginActivity.findViewById(R.id.password);
+        btnLogin = (Button) loginActivity.findViewById(R.id.email_sign_in_button);
+
     }
 
     @Test
     public void initTest(){
         Assert.assertNotNull(loginActivity);
+        btnLogin.performClick();
+        edtUser.setText("User");
+        edtPassword.setText("Password");
+        btnLogin.performClick();
     }
 }
