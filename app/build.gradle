@@ -1,5 +1,10 @@
 apply plugin: 'com.android.application'
-apply from: '../jacoco.gradle'
+apply from: rootProject.file('jacoco.gradle')
+
+clean.doFirst {
+    delete "${rootDir}/api-library/auto-generated-classes/"
+    println "${rootDir}/api-library/auto-generated-classes/"
+}
 android {
     compileSdkVersion 27
     aaptOptions.cruncherEnabled = false
@@ -12,7 +17,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     testOptions {
-        unitTests.returnDefaultValues = true
+       
         unitTests {
             includeAndroidResources = true
         }
@@ -25,6 +30,8 @@ android {
         }
         debug {
             testCoverageEnabled = true
+            minifyEnabled false
+            debuggable true
         }
     }
 }
